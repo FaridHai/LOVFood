@@ -1,0 +1,6 @@
+# Intelij
+*.iml
+.idea
+
+# Misc
+.DS_Store
