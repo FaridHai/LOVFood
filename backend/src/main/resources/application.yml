@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      database: Capstone-Project
+server:
+  error:
+    include-message: always
