@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("images/dreamstime_l_68078380.jpg");
+  background-size: 100% auto;
 }
 
 code {

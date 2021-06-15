@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      database: Capstone-Project
+      database: lovfood
 server:
   error:
     include-message: always
