@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import Header from "../components/Header";
 import Navigation from "../components/Navigation";
 
-export default function HomePage() {
+export default function Recipes() {
   return (
     <Wrapper>
       <Header />
