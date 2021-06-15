@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import {Button, Text, TextInput} from "@primer/components";
+import {Button} from "@primer/components";
 
 export default function HomePage() {
 
@@ -12,14 +12,7 @@ export default function HomePage() {
        <Wrapper>
         <form onSubmit={handleSubmit}>
             <Wrapper>
-                <Text>
-                    Incredients
-                    <TextInput
-                        type="text"
-                        name="incredients"
-                        value="incredients"
-                    />
-                </Text>
+                    <input type="text" placeholder="Incredients"></input>
                 <Button>Search</Button>
             </Wrapper>
         </form>
