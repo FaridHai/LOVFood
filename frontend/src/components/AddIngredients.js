@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function AddIngredients({ onAddClick }) {
   const [ingredient, setIngredient] = useState("");
 
-  const handeAddClick = () => {
+  const handleAddClick = () => {
     onAddClick(ingredient);
     setIngredient("");
   };
@@ -17,7 +17,7 @@ export default function AddIngredients({ onAddClick }) {
         value={ingredient}
         onChange={(event) => setIngredient(event.target.value)}
       />
-      <button onClick={handeAddClick}>Add</button>
+      <button onClick={handleAddClick}>Add</button>
     </Wrapper>
   );
 }
