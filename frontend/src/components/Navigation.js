@@ -34,10 +34,10 @@ export default function Navigation() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>
-          <NavLink to={"/"}>Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <NavLink to={"/recipes"}>Recipes</NavLink>
+          <NavLink to="/recipes">Recipes</NavLink>
         </MenuItem>
       </Menu>
     </Wrapper>
@@ -46,6 +46,5 @@ export default function Navigation() {
 
 const Wrapper = styled.nav`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
 `;
