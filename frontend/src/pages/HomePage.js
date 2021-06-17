@@ -16,7 +16,7 @@ export default function HomePage({
       <Navigation />
       <AddIngredients onAddClick={addnewIngredients} />
       <Titel>
-        <h4>Your Ingredients:</h4>
+        <h4>Deine Zutaten:</h4>
       </Titel>
       <IngredientsList
         ingredients={ingredients}

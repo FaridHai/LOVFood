@@ -13,11 +13,11 @@ export default function AddIngredients({ onAddClick }) {
     <Wrapper>
       <input
         type="text"
-        placeholder="Enter Ingredient"
+        placeholder="Zutate Eingeben"
         value={ingredient}
         onChange={(event) => setIngredient(event.target.value)}
       />
-      <button onClick={handleAddClick}>Add</button>
+      <button onClick={handleAddClick}>Hinzufügen</button>
     </Wrapper>
   );
 }
