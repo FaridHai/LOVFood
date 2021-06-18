@@ -3,15 +3,24 @@ import { TextField } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import { useState } from "react";
 
-export default function AddIngredients({ ingredients, setIngredientsList }) {
+export default function AddIngredients({
+  ingredients,
+  ingredientsList,
+  setIngredientsList,
+}) {
   const [ingredient, setIngredient] = useState("");
+  let checkForDouble = false;
 
   const handleAddClick = (event) => {
     event.preventDefault();
-    setIngredientsList((ingredientsList) => [
-      ...ingredientsList,
-      ingredient.name,
-    ]);
+    for (let i = 0; i < ingredientsList.length; i++) {
+      if (ingredientsList[i] === ingredient.name) {
+        checkForDouble = true;
+      }
+    }
+    if (checkForDouble === false) {
+      setIngredientsList([...ingredientsList, ingredient.name]);
+    }
   };
 
   const handleInputChange = (event, value) => {

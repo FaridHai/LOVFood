@@ -4,21 +4,20 @@ import AddIngredients from "../components/AddIngredients";
 import Page from "../components/Page";
 import IngredientsList from "../components/IngredientsList";
 import styled from "styled-components/macro";
-import { useState } from "react";
 
-export default function HomePage({ ingredients }) {
-  const [ingredientsList, setIngredientsList] = useState([
-    "Wasser",
-    "Salz",
-    "Pfeffer",
-  ]);
+export default function HomePage({
+  ingredients,
+  ingredientsList,
+  setIngredientsList,
+}) {
   return (
     <Page>
       <Header />
       <Navigation />
       <AddIngredients
-        setIngredientsList={setIngredientsList}
         ingredients={ingredients}
+        ingredientsList={ingredientsList}
+        setIngredientsList={setIngredientsList}
       />
       <Titel>
         <h4>Deine Zutaten:</h4>
