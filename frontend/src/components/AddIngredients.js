@@ -32,7 +32,7 @@ export default function AddIngredients({ ingredients, setIngredientsList }) {
         getOptionLabel={(ingredient) => ingredient.name}
         renderInput={(params) => <TextField {...params} label="Zutate:" />}
       />
-      <button>Hinzufügen</button>
+      <button disabled={!ingredient}>Hinzufügen</button>
     </Wrapper>
   );
 }
