@@ -36,4 +36,23 @@ public class IngredientsItemControllerTest {
         assertThat(response.getStatusCode(), is(HttpStatus.OK));
         assertThat(response.getBody(), is(new Ingredient("Cola")));
     }
+
+    @Test
+    public void whenPutIngredientWithUnknownNameServerReturn404(){
+        //GIVEN
+        repository.save(new Ingredient("Kartoffel"));
+
+        Ingredient updated = new Ingredient("Cola");
+
+        //WHEN
+        HttpEntity<Ingredient> entity = new HttpEntity<>(updated);
+        ResponseEntity<Ingredient> response = restTemplate.exchange("http://localhost:" + port + "/api/ingredients/2",
+                HttpMethod.GET,
+                entity,
+                Ingredient.class);
+
+        //THEN
+        assertThat(response.getStatusCode(), is(HttpStatus.NOT_FOUND));
+    }
+
 }
