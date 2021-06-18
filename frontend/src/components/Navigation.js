@@ -30,13 +30,13 @@ export default function Navigation() {
         <BottomNavigationAction
           component={Link}
           to="/"
-          label="Home"
+          label="Startseite"
           icon={<HomeIcon />}
         />
         <BottomNavigationAction
           component={Link}
           to="/recipes"
-          label="Recipes"
+          label="Rezepte"
           icon={<FastfoodIcon />}
         />
       </BottomNavigation>

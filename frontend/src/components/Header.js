@@ -1,14 +1,18 @@
 import styled from "styled-components/macro";
+import logo from "../images/LOVFoodLogo.png";
 
 export default function Header() {
   return (
     <Wrapper>
-      <h1>LOVFOOD</h1>
-      <h3>LeftOver Food Recipes</h3>
+      <img src={logo} alt={"Logo"} />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.header`
   text-align: center;
+  img {
+    height: 150px;
+    width: 150px;
+  }
 `;

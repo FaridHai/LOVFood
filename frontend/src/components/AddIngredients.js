@@ -1,31 +1,46 @@
 import styled from "styled-components/macro";
+import { TextField } from "@material-ui/core";
+import { Autocomplete } from "@material-ui/lab";
 import { useState } from "react";
 
-export default function AddIngredients({ onAddClick }) {
+export default function AddIngredients({ ingredients, setIngredientsList }) {
   const [ingredient, setIngredient] = useState("");
 
-  const handleAddClick = () => {
-    onAddClick(ingredient);
-    setIngredient("");
+  const handleAddClick = (event) => {
+    event.preventDefault();
+    setIngredientsList((ingredientsList) => [
+      ...ingredientsList,
+      ingredient.name,
+    ]);
+  };
+
+  const handleInputChange = (event, value) => {
+    if (value !== null) {
+      setIngredient(value);
+    }
   };
 
   return (
-    <Wrapper>
-      <input
-        type="text"
-        placeholder="Enter Ingredient"
-        value={ingredient}
-        onChange={(event) => setIngredient(event.target.value)}
+    <Wrapper onSubmit={handleAddClick}>
+      <Autocomplete
+        onChange={(event, value) => handleInputChange(event, value)}
+        onInputChange={(event, value) => handleInputChange(event, value)}
+        id="Ingredient"
+        color={"white"}
+        style={{ width: "100%" }}
+        options={ingredients}
+        getOptionLabel={(ingredient) => ingredient.name}
+        renderInput={(params) => <TextField {...params} label="Zutate:" />}
       />
-      <button onClick={handleAddClick}>Add</button>
+      <button disabled={!ingredient}>Hinzufügen</button>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.form`
   display: flex;
   justify-content: center;
-  padding: 24px;
+  padding: 24px 24px 0px;
   input {
     margin-right: 12px;
     flex-grow: 1;
