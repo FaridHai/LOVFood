@@ -26,7 +26,6 @@ export default function AddIngredients({ ingredients, setIngredientsList }) {
         onChange={(event, value) => handleInputChange(event, value)}
         onInputChange={(event, value) => handleInputChange(event, value)}
         id="Ingredient"
-        freeSolo
         color={"white"}
         style={{ width: "100%" }}
         options={ingredients}

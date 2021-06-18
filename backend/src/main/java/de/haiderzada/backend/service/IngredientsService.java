@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class IngredientsService {
@@ -19,5 +20,9 @@ public class IngredientsService {
 
     public List<Ingredient> listIngredients() {
         return ingredientsRepository.findAll();
+    }
+
+    public Optional<Ingredient> findByName(String name) {
+        return ingredientsRepository.findById(name);
     }
 }
