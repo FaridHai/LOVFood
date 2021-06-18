@@ -4,21 +4,6 @@ import { useEffect, useState } from "react";
 export default function useHook() {
   const [ingredients, setIngredients] = useState([]);
 
-  const addNewIngredients = (name) => {
-    // axios;
-    // .post("/api/ingredients", { name })
-    // .then((response) => response.data)
-    // .then((newIngredient) => setIngredients([...ingredients, newIngredient]))
-    // .catch((error) => console.error(error));
-  };
-
-  const removeIngredient = (ingredient) => {
-    // axios
-    //   .delete("/api/ingredients/" + ingredient)
-    //   .then(window.location.reload())
-    //   .catch((error) => console.error(error));
-  };
-
   useEffect(() => {
     axios
       .get("/api/ingredients")
@@ -29,7 +14,5 @@ export default function useHook() {
 
   return {
     ingredients,
-    addNewIngredients,
-    removeIngredient,
   };
 }

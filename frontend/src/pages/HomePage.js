@@ -5,11 +5,7 @@ import Page from "../components/Page";
 import IngredientsList from "../components/IngredientsList";
 import styled from "styled-components/macro";
 
-export default function HomePage({
-  ingredients,
-  addnewIngredients,
-  removeIngredient,
-}) {
+export default function HomePage({ ingredients }) {
   return (
     <Page>
       <Header />
@@ -18,10 +14,7 @@ export default function HomePage({
       <Titel>
         <h4>Deine Zutaten:</h4>
       </Titel>
-      <IngredientsList
-        ingredients={ingredients}
-        removeIngredient={removeIngredient}
-      />
+      <IngredientsList ingredients={ingredients} />
     </Page>
   );
 }

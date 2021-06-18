@@ -4,17 +4,13 @@ import Recipes from "./pages/Recipes";
 import useHook from "./hooks/useHook";
 
 export default function App() {
-  const { ingredients, addNewIngredients, removeIngredient } = useHook();
+  const { ingredients } = useHook();
 
   return (
     <Router>
       <Switch>
         <Route path={"/"} exact>
-          <HomePage
-            ingredients={ingredients}
-            addnewIngredients={addNewIngredients}
-            removeIngredient={removeIngredient}
-          />
+          <HomePage ingredients={ingredients} />
         </Route>
         <Route path={"/recipes"} exact>
           <Recipes />

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import IngredientItem from "./IngredientItem";
 
-export default function IngredientsList({ ingredients, removeIngredient }) {
+export default function IngredientsList({ ingredients }) {
   return (
     <Wrapper>
       <div>

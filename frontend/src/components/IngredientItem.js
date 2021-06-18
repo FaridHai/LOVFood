@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
 
-export default function IngredientItem({ ingredient, removeIngredient }) {
+export default function IngredientItem({ ingredient }) {
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
