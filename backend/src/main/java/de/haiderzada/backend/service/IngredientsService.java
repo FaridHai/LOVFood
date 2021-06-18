@@ -20,12 +20,4 @@ public class IngredientsService {
     public List<Ingredient> listIngredients() {
         return ingredientsRepository.findAll();
     }
-
-    public Ingredient addNewIngredient(Ingredient ingredient) {
-        return ingredientsRepository.save(ingredient);
-    }
-
-    public void deleteIngredient(String name) {
-        ingredientsRepository.deleteById(name);
-    }
 }

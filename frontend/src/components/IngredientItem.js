@@ -17,17 +17,17 @@ export default function IngredientItem({ ingredient }) {
   const classes = useStyles();
 
   const handleDelete = () => {
-    removeIngredient(ingredient.name);
+    console.log("Delete wurde gedrückt");
   };
 
   return (
     <Wrapper className={classes.root}>
-      <Chip label={ingredient.name} onDelete={handleDelete} />
+      <Chip label={ingredient} onDelete={handleDelete} />
     </Wrapper>
   );
 }
 const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  padding: 24px;
+  padding: 5px;
+  width: 150px;
+  height: 25px;
 `;

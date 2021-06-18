@@ -22,15 +22,4 @@ public class IngredientsItemController {
     public List<Ingredient> listIngredients() {
         return service.listIngredients();
     }
-
-    @PostMapping
-    public Ingredient addIngredientItem(@RequestBody Ingredient ingredient) {
-        return service.addNewIngredient(ingredient);
-    }
-
-    @DeleteMapping("{name}")
-    public void deleteIngredient(@PathVariable String name){
-        service.deleteIngredient(name);
-    }
-
 }

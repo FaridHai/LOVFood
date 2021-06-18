@@ -3,11 +3,15 @@ import { TextField } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import { useState } from "react";
 
-export default function AddIngredients({ ingredients }) {
+export default function AddIngredients({ ingredients, setIngredientsList }) {
   const [ingredient, setIngredient] = useState("");
 
-  const handleAddClick = () => {
-    setIngredient("");
+  const handleAddClick = (event) => {
+    event.preventDefault();
+    setIngredientsList((ingredientsList) => [
+      ...ingredientsList,
+      ingredient.name,
+    ]);
   };
 
   const handleInputChange = (event, value) => {
@@ -17,7 +21,7 @@ export default function AddIngredients({ ingredients }) {
   };
 
   return (
-    <Wrapper>
+    <Wrapper onSubmit={handleAddClick}>
       <Autocomplete
         onChange={(event, value) => handleInputChange(event, value)}
         onInputChange={(event, value) => handleInputChange(event, value)}
@@ -29,13 +33,12 @@ export default function AddIngredients({ ingredients }) {
         getOptionLabel={(ingredient) => ingredient.name}
         renderInput={(params) => <TextField {...params} label="Zutate:" />}
       />
-      {/*<input type="text" placeholder="Zutate Eingeben" value={ingredient} onChange={(event) => setIngredient(event.target.value)}/>*/}
-      <button onClick={handleAddClick}>Hinzufügen</button>
+      <button>Hinzufügen</button>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.form`
   display: flex;
   justify-content: center;
   padding: 24px 24px 0px;
