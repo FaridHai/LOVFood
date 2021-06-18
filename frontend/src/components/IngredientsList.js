@@ -5,13 +5,13 @@ export default function IngredientsList({ ingredients, removeIngredient }) {
   return (
     <Wrapper>
       <div>
-        {ingredients.map((ingredient, index) => (
-          <IngredientItem
-            key={index}
-            ingredient={ingredient}
-            removeIngredient={removeIngredient}
-          />
-        ))}
+        {/*{ingredients.map((ingredient, index) => (*/}
+        {/*  <IngredientItem*/}
+        {/*    key={index}*/}
+        {/*    ingredient={ingredient}*/}
+        {/*    removeIngredient={removeIngredient}*/}
+        {/*  />*/}
+        {/*))}*/}
       </div>
     </Wrapper>
   );
