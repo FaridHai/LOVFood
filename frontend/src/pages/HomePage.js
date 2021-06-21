@@ -22,7 +22,10 @@ export default function HomePage({
       <Titel>
         <h4>Deine Zutaten:</h4>
       </Titel>
-      <IngredientsList ingredientsList={ingredientsList} />
+      <IngredientsList
+        ingredientsList={ingredientsList}
+        setIngredientsList={setIngredientsList}
+      />
     </Page>
   );
 }

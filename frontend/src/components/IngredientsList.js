@@ -1,8 +1,10 @@
 import styled from "styled-components/macro";
 import IngredientItem from "./IngredientItem";
 
-export default function IngredientsList({ ingredientsList }) {
-  console.log(ingredientsList);
+export default function IngredientsList({
+  ingredientsList,
+  setIngredientsList,
+}) {
   return (
     <Wrapper>
       {ingredientsList.map((ingredient, index) => (
@@ -10,6 +12,7 @@ export default function IngredientsList({ ingredientsList }) {
           key={index}
           ingredient={ingredient}
           ingredientsList={ingredientsList}
+          setIngredientsList={setIngredientsList}
         />
       ))}
     </Wrapper>

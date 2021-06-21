@@ -2,7 +2,11 @@ import styled from "styled-components/macro";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
 
-export default function IngredientItem({ ingredient, ingredientsList }) {
+export default function IngredientItem({
+  ingredient,
+  ingredientsList,
+  setIngredientsList,
+}) {
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
@@ -18,11 +22,12 @@ export default function IngredientItem({ ingredient, ingredientsList }) {
 
   const handleDelete = (event) => {
     event.preventDefault();
-    for (let i = 0; i < ingredientsList.length; i++) {
-      if (ingredientsList[i] === ingredient) {
-        ingredientsList.splice(i, 1);
-      }
-    }
+
+    setIngredientsList(
+      ingredientsList.filter((ing) => {
+        return ing !== ingredient;
+      })
+    );
   };
 
   return (
