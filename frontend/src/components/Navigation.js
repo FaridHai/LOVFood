@@ -1,9 +1,10 @@
 import styled from "styled-components/macro";
-import React from "react";
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
 
 export default function Navigation() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   return (
     <Wrapper>
@@ -38,6 +39,12 @@ export default function Navigation() {
           to="/recipes"
           label="Rezepte"
           icon={<FastfoodIcon />}
+        />
+        <BottomNavigationAction
+          component={Link}
+          to="/filteredSearch"
+          label="Suchergebnis"
+          icon={<SearchIcon />}
         />
       </BottomNavigation>
     </Wrapper>

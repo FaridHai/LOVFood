@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import Recipes from "./pages/Recipes";
 import useIngredients from "./hooks/useIngredients";
 import InitialIngredients from "./hooks/InitialIngredrients";
+import FilteredRecipes from "./pages/FilteredRecipes";
 
 export default function App() {
   const { ingredients } = useIngredients();
@@ -19,6 +20,9 @@ export default function App() {
         </Route>
         <Route path={"/recipes"} exact>
           <Recipes />
+        </Route>
+        <Route path={"/filteredSearch"} exact>
+          <FilteredRecipes ingredientsList={ingredientsList} />
         </Route>
       </Switch>
     </Router>
