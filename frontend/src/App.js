@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Recipes from "./pages/Recipes";
 import useIngredients from "./hooks/useIngredients";
-import InitialIngredients from "./hooks/InitialIngredrients";
 import FilteredRecipes from "./pages/FilteredRecipes";
+import useInitialIngredients from "./hooks/useInitialIngredrients";
 
 export default function App() {
   const { ingredients } = useIngredients();
-  const { ingredientsList, setIngredientsList } = InitialIngredients();
+  const { ingredientsList, setIngredientsList } = useInitialIngredients();
   return (
     <Router>
       <Switch>
@@ -22,7 +22,7 @@ export default function App() {
           <Recipes />
         </Route>
         <Route path={"/filteredSearch"} exact>
-          <FilteredRecipes ingredientsList={ingredientsList} />
+          <FilteredRecipes />
         </Route>
       </Switch>
     </Router>

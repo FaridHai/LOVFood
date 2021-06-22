@@ -22,9 +22,7 @@ export default function HomePage({
         ingredientsList={ingredientsList}
         setIngredientsList={setIngredientsList}
       />
-      <Titel>
-        <h4>Deine Zutaten:</h4>
-      </Titel>
+      <Titel>Deine Zutaten:</Titel>
       <IngredientsList
         ingredientsList={ingredientsList}
         setIngredientsList={setIngredientsList}
@@ -32,6 +30,7 @@ export default function HomePage({
       <Button
         variant="contained"
         onClick={() => history.push("/filteredSearch")}
+        disabled={ingredientsList.length < 4}
       >
         Search
       </Button>
