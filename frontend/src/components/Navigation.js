@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Navigation() {
+export default function Navigation({ searchedClicked }) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
@@ -40,12 +40,14 @@ export default function Navigation() {
           label="Rezepte"
           icon={<FastfoodIcon />}
         />
-        <BottomNavigationAction
-          component={Link}
-          to="/filteredSearch"
-          label="Suchergebnis"
-          icon={<SearchIcon />}
-        />
+        {searchedClicked && (
+          <BottomNavigationAction
+            component={Link}
+            to="/filteredSearch"
+            label="Suchergebnis"
+            icon={<SearchIcon />}
+          />
+        )}
       </BottomNavigation>
     </Wrapper>
   );

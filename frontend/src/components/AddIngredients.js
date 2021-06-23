@@ -9,20 +9,23 @@ export default function AddIngredients({
   setIngredientsList,
 }) {
   const [ingredient, setIngredient] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleAddClick = (event) => {
     event.preventDefault();
     const checkForDouble = ingredientsList.find(
-      (element) => element === ingredient.name
+      (element) => element === ingredient
     );
     if (checkForDouble === undefined) {
-      setIngredientsList([...ingredientsList, ingredient.name]);
+      setIngredientsList([...ingredientsList, ingredient]);
+      setDescription("");
     }
   };
 
   const handleInputChange = (event, value) => {
     if (value !== null) {
       setIngredient(value);
+      setDescription(value);
     }
   };
 
@@ -33,6 +36,7 @@ export default function AddIngredients({
         onInputChange={(event, value) => handleInputChange(event, value)}
         id="Ingredient"
         color={"white"}
+        inputValue={description}
         style={{ width: "100%" }}
         options={ingredients}
         getOptionLabel={(ingredient) => ingredient.name}

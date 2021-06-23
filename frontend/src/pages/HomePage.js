@@ -1,22 +1,17 @@
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
 import AddIngredients from "../components/AddIngredients";
 import Page from "../components/Page";
-import { useHistory } from "react-router-dom";
 import IngredientsList from "../components/IngredientsList";
 import styled from "styled-components/macro";
-import { Button } from "@material-ui/core";
+import Search from "../components/Search";
 
 export default function HomePage({
   ingredients,
   ingredientsList,
   setIngredientsList,
+  setSearchClicked,
 }) {
-  const history = useHistory();
   return (
     <Page>
-      <Header />
-      <Navigation />
       <AddIngredients
         ingredients={ingredients}
         ingredientsList={ingredientsList}
@@ -27,13 +22,10 @@ export default function HomePage({
         ingredientsList={ingredientsList}
         setIngredientsList={setIngredientsList}
       />
-      <Button
-        variant="contained"
-        onClick={() => history.push("/filteredSearch")}
-        disabled={ingredientsList.length < 4}
-      >
-        Search
-      </Button>
+      <Search
+        ingredientsList={ingredientsList}
+        setSearchClicked={setSearchClicked}
+      />
     </Page>
   );
 }
