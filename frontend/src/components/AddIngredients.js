@@ -10,17 +10,14 @@ export default function AddIngredients({
 }) {
   const [ingredient, setIngredient] = useState("");
   const [description, setDescription] = useState("");
-  let checkForDouble = false;
 
   const handleAddClick = (event) => {
     event.preventDefault();
-    for (let i = 0; i < ingredientsList.length; i++) {
-      if (ingredientsList[i] === ingredient.name) {
-        checkForDouble = true;
-      }
-    }
-    if (checkForDouble === false) {
-      setIngredientsList([...ingredientsList, ingredient.name]);
+    const checkForDouble = ingredientsList.find(
+      (element) => element === ingredient
+    );
+    if (checkForDouble === undefined) {
+      setIngredientsList([...ingredientsList, ingredient]);
       setDescription("");
     }
   };
@@ -39,7 +36,7 @@ export default function AddIngredients({
         onInputChange={(event, value) => handleInputChange(event, value)}
         id="Ingredient"
         color={"white"}
-        value={description}
+        inputValue={description}
         style={{ width: "100%" }}
         options={ingredients}
         getOptionLabel={(ingredient) => ingredient.name}
@@ -53,7 +50,7 @@ export default function AddIngredients({
 const Wrapper = styled.form`
   display: flex;
   justify-content: center;
-  padding: 24px 24px 0px;
+  padding: 24px;
   input {
     margin-right: 12px;
     flex-grow: 1;

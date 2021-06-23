@@ -1,5 +1,5 @@
 import Main from "../components/Main";
 
-export default function Recipes() {
+export default function FilteredRecipes() {
   return <Main></Main>;
 }
