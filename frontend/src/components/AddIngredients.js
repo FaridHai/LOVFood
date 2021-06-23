@@ -50,7 +50,7 @@ export default function AddIngredients({
 const Wrapper = styled.form`
   display: flex;
   justify-content: center;
-  padding: 24px 24px;
+  padding: 24px;
   input {
     margin-right: 12px;
     flex-grow: 1;
