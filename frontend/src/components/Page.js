@@ -7,4 +7,5 @@ export default styled.div`
   height: 100%;
   display: grid;
   grid-template-rows: min-content min-content min-content min-content 1fr;
+  overflow-y: auto;
 `;
