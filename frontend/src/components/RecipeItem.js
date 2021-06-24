@@ -28,9 +28,10 @@ export default function RecipeItem({ recipe }) {
   const classes = useStyles();
   return (
     <Wrapper>
-      <Card className={classes.root}>
+      <Card className={classes.root} style={{ backgroundColor: "#008080" }}>
         <CardContent>
           <Typography
+            style={{ color: "white" }}
             className={classes.title}
             color="textSecondary"
             gutterBottom
@@ -39,7 +40,9 @@ export default function RecipeItem({ recipe }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Zur Anleitung</Button>
+          <Button style={{ color: "white" }} size="small">
+            Zur Anleitung
+          </Button>
         </CardActions>
       </Card>
     </Wrapper>

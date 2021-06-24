@@ -32,7 +32,11 @@ export default function IngredientItem({
 
   return (
     <Wrapper className={classes.root}>
-      <Chip label={ingredient} onDelete={handleDelete} />
+      <Chip
+        style={{ backgroundColor: "#008080", color: "white" }}
+        label={ingredient}
+        onDelete={handleDelete}
+      />
     </Wrapper>
   );
 }

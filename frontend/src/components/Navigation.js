@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     width: "auto",
+    backgroundColor: "#008080",
+    borderRadius: "12px",
   },
 });
 
@@ -29,23 +31,27 @@ export default function Navigation({ searchedClicked }) {
         className={classes.root}
       >
         <BottomNavigationAction
+          style={{ color: "white" }}
           component={Link}
           to="/"
           label="Startseite"
-          icon={<HomeIcon />}
+          color={"white"}
+          icon={<HomeIcon style={{ color: "white" }} />}
         />
         <BottomNavigationAction
+          style={{ color: "white" }}
           component={Link}
           to="/recipes"
           label="Rezepte"
-          icon={<FastfoodIcon />}
+          icon={<FastfoodIcon style={{ color: "white" }} />}
         />
         {searchedClicked && (
           <BottomNavigationAction
+            style={{ color: "white" }}
             component={Link}
             to="/filteredSearch"
             label="Suchergebnis"
-            icon={<SearchIcon />}
+            icon={<SearchIcon style={{ color: "white" }} />}
           />
         )}
       </BottomNavigation>
