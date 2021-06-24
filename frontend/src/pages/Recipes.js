@@ -1,14 +1,12 @@
-import Page from "../components/Page";
+import Main from "../components/Main";
 import RecipeList from "../components/RecipeList";
 import styled from "styled-components/macro";
 
-export default function Recipes({ recipes }) {
-  return (
-    <Page>
-      <Titel>Alle Rezepte:</Titel>
-      <RecipeList recipes={recipes} />
-    </Page>
-  );
+export default function Recipes() {
+  return (<Main>
+    <Titel>Alle Rezepte:</Titel>
+    <RecipeList recipes={recipes} />
+  </Main>);
 }
 const Titel = styled.section`
   display: flex;

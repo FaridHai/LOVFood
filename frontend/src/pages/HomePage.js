@@ -1,5 +1,5 @@
 import AddIngredients from "../components/AddIngredients";
-import Page from "../components/Page";
+import Main from "../components/Main";
 import IngredientsList from "../components/IngredientsList";
 import styled from "styled-components/macro";
 import Search from "../components/Search";
@@ -11,7 +11,7 @@ export default function HomePage({
   setSearchClicked,
 }) {
   return (
-    <Page>
+    <Main>
       <AddIngredients
         ingredients={ingredients}
         ingredientsList={ingredientsList}
@@ -26,7 +26,7 @@ export default function HomePage({
         ingredientsList={ingredientsList}
         setSearchClicked={setSearchClicked}
       />
-    </Page>
+    </Main>
   );
 }
 
@@ -35,4 +35,5 @@ const Titel = styled.section`
   justify-content: center;
   margin-top: 20px;
   height: 10%;
+  padding: 5px;
 `;
