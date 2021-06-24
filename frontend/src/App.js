@@ -7,8 +7,10 @@ import useInitialIngredients from "./hooks/useInitialIngredrients";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import { useState } from "react";
+import useRecipes from "./hooks/useRecipes";
 
 export default function App() {
+  const { recipes, recipesList, setRecipesList } = useRecipes();
   const { ingredients } = useIngredients();
   const { ingredientsList, setIngredientsList } = useInitialIngredients();
   const [searchClicked, setSearchClicked] = useState();
@@ -26,7 +28,11 @@ export default function App() {
           />
         </Route>
         <Route path={"/recipes"} exact>
-          <Recipes />
+          <Recipes
+            recipes={recipes}
+            recipesList={recipesList}
+            setRecipesList={setRecipesList}
+          />
         </Route>
         <Route path={"/filteredSearch"} exact>
           <FilteredRecipes />

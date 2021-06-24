@@ -1,5 +1,18 @@
 import Main from "../components/Main";
+import RecipeList from "../components/RecipeList";
+import styled from "styled-components/macro";
 
-export default function Recipes() {
-  return <Main></Main>;
+export default function Recipes({ recipes }) {
+  return (
+    <Main>
+      <Titel>Alle Rezepte:</Titel>
+      <RecipeList recipes={recipes} />
+    </Main>
+  );
 }
+const Titel = styled.section`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  height: 10%;
+`;
