@@ -14,6 +14,9 @@ const useStyles = makeStyles({
     backgroundColor: "#008080",
     borderRadius: "12px",
   },
+  navi: {
+    color: "white",
+  },
 });
 
 export default function Navigation({ searchedClicked }) {
@@ -31,7 +34,7 @@ export default function Navigation({ searchedClicked }) {
         className={classes.root}
       >
         <BottomNavigationAction
-          style={{ color: "white" }}
+          className={classes.navi}
           component={Link}
           to="/"
           label="Startseite"
@@ -39,7 +42,7 @@ export default function Navigation({ searchedClicked }) {
           icon={<HomeIcon style={{ color: "white" }} />}
         />
         <BottomNavigationAction
-          style={{ color: "white" }}
+          className={classes.navi}
           component={Link}
           to="/recipes"
           label="Rezepte"
@@ -47,7 +50,7 @@ export default function Navigation({ searchedClicked }) {
         />
         {searchedClicked && (
           <BottomNavigationAction
-            style={{ color: "white" }}
+            className={classes.navi}
             component={Link}
             to="/filteredSearch"
             label="Suchergebnis"

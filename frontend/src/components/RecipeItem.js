@@ -6,10 +6,12 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components/macro";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
+    backgroundColor: "#008080",
   },
   bullet: {
     display: "inline-block",
@@ -18,20 +20,24 @@ const useStyles = makeStyles({
   },
   title: {
     fontSize: 14,
+    color: "white",
   },
   pos: {
     marginBottom: 12,
+  },
+  button: {
+    color: "white",
   },
 });
 
 export default function RecipeItem({ recipe }) {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <Wrapper>
-      <Card className={classes.root} style={{ backgroundColor: "#008080" }}>
+      <Card className={classes.root}>
         <CardContent>
           <Typography
-            style={{ color: "white" }}
             className={classes.title}
             color="textSecondary"
             gutterBottom
@@ -40,7 +46,13 @@ export default function RecipeItem({ recipe }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button style={{ color: "white" }} size="small">
+          <Button
+            className={classes.button}
+            size="small"
+            onClick={() => {
+              history.push("/detailspage");
+            }}
+          >
             Zur Anleitung
           </Button>
         </CardActions>
