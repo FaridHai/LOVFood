@@ -1,3 +1,5 @@
+import Main from "../components/Main";
+
 export default function DetailsPage() {
-  return <div>Test</div>;
+  return <Main></Main>;
 }

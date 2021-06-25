@@ -1,8 +1,9 @@
 package de.haiderzada.backend.controller;
 
 import de.haiderzada.backend.model.Ingredient;
+import de.haiderzada.backend.model.Recipe;
+import de.haiderzada.backend.service.RecipesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.cdi.Eager;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import de.haiderzada.backend.service.IngredientsService;
@@ -16,10 +17,12 @@ import java.util.Optional;
 public class IngredientsItemController {
 
     private final IngredientsService service;
+    private final RecipesService recipesService;
 
     @Autowired
-    public IngredientsItemController(IngredientsService service) {
+    public IngredientsItemController(IngredientsService service, RecipesService recipesService) {
         this.service = service;
+        this.recipesService = recipesService;
     }
 
     @GetMapping
@@ -34,5 +37,11 @@ public class IngredientsItemController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ingredient with name " + name + " not found");
         }
         return response.get();
+    }
+
+    @PostMapping
+    public List<Recipe> enteredIngredient(@RequestBody List<Ingredient> ingredientsList){
+        List<Recipe> recipeList = recipesService.filteredRecipes(ingredientsList);
+        return recipeList;
     }
 }

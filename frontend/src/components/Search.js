@@ -2,7 +2,11 @@ import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 
-export default function Search({ ingredientsList, setSearchClicked }) {
+export default function Search({
+  ingredientsList,
+  setSearchClicked,
+  enteredIngrredients,
+}) {
   const history = useHistory();
   return (
     <Wrapper>
@@ -11,6 +15,7 @@ export default function Search({ ingredientsList, setSearchClicked }) {
         variant="contained"
         onClick={() => {
           setSearchClicked(true);
+          enteredIngrredients(ingredientsList);
           history.push("/filteredSearch");
         }}
         disabled={ingredientsList.length < 4}
