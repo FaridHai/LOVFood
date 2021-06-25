@@ -42,12 +42,7 @@ export default function AddIngredients({
         getOptionLabel={(ingredient) => ingredient.name}
         renderInput={(params) => <TextField {...params} label="Zutate:" />}
       />
-      <button
-        disabled={!ingredient}
-        style={{ backgroundColor: "#008080", color: "white" }}
-      >
-        Hinzufügen
-      </button>
+      <button disabled={!ingredient}>Hinzufügen</button>
     </Wrapper>
   );
 }
@@ -59,5 +54,10 @@ const Wrapper = styled.form`
   input {
     margin-right: 12px;
     flex-grow: 1;
+  }
+  button {
+    background-color: #008080;
+    color: white;
+    border-radius: 12px;
   }
 `;
