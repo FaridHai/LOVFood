@@ -7,6 +7,7 @@ export default function Search({ ingredientsList, setSearchClicked }) {
   return (
     <Wrapper>
       <Button
+        style={{ color: "white" }}
         variant="contained"
         onClick={() => {
           setSearchClicked(true);
@@ -25,4 +26,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: grid;
   grid-template-rows: min-content min-content min-content min-content 1fr;
+  Button {
+    background-color: #008080;
+  }
 `;

@@ -55,4 +55,9 @@ const Wrapper = styled.form`
     margin-right: 12px;
     flex-grow: 1;
   }
+  button {
+    background-color: #008080;
+    color: white;
+    border-radius: 12px;
+  }
 `;

@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import { useState } from "react";
 import useRecipes from "./hooks/useRecipes";
+import DetailsPage from "./pages/DetailsPage";
 
 export default function App() {
   const { recipes, recipesList, setRecipesList } = useRecipes();
@@ -36,6 +37,9 @@ export default function App() {
         </Route>
         <Route path={"/filteredSearch"} exact>
           <FilteredRecipes />
+        </Route>
+        <Route path={"/detailspage"} exact>
+          <DetailsPage />
         </Route>
       </Switch>
     </Router>
