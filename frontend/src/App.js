@@ -13,7 +13,12 @@ import DetailsPage from "./pages/DetailsPage";
 export default function App() {
   const { recipes, recipesList, setRecipesList } = useRecipes();
   const { ingredients } = useIngredients();
-  const { ingredientsList, setIngredientsList } = useInitialIngredients();
+  const {
+    ingredientsList,
+    setIngredientsList,
+    enteredIngredients,
+    filteredRecipes,
+  } = useInitialIngredients();
   const [searchClicked, setSearchClicked] = useState();
   return (
     <Router>
@@ -26,6 +31,7 @@ export default function App() {
             ingredientsList={ingredientsList}
             setIngredientsList={setIngredientsList}
             setSearchClicked={setSearchClicked}
+            enteredIngredients={enteredIngredients}
           />
         </Route>
         <Route path={"/recipes"} exact>
@@ -36,7 +42,11 @@ export default function App() {
           />
         </Route>
         <Route path={"/filteredSearch"} exact>
-          <FilteredRecipes />
+          <FilteredRecipes
+            ingredientsList={ingredientsList}
+            recipes={recipes}
+            filteredRecipes={filteredRecipes}
+          />
         </Route>
         <Route path={"/detailspage"} exact>
           <DetailsPage />

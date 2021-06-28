@@ -24,5 +24,4 @@ public class RecipesItemController {
     public List<Recipe> listIngredients() {
         return service.listRecipes();
     }
-
 }
