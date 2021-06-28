@@ -9,7 +9,7 @@ export default function HomePage({
   ingredientsList,
   setIngredientsList,
   setSearchClicked,
-  enteredIngredients,
+  getRecipesByIngredients,
 }) {
   return (
     <Main>
@@ -26,7 +26,7 @@ export default function HomePage({
       <Search
         ingredientsList={ingredientsList}
         setSearchClicked={setSearchClicked}
-        enteredIngrredients={enteredIngredients}
+        getRecipesByIngredients={getRecipesByIngredients}
       />
     </Main>
   );
