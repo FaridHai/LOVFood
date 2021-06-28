@@ -24,12 +24,10 @@ public class RecipesService {
     }
 
     public List<Recipe> filteredRecipes(List<Ingredient> ingredientsList) {
-        System.out.println(ingredientsList);
-        List<Recipe> recipeList = listRecipes()
+        return listRecipes()
                 .stream()
                 .filter(recipe -> ingredientsList.containsAll(recipe.getIngredients()))
                 .collect(Collectors.toList());
-        return recipeList;
     }
 
 }

@@ -20,7 +20,7 @@ export default function Search({
         }}
         disabled={ingredientsList.length < 4}
       >
-        Search
+        Suchen
       </Button>
     </Wrapper>
   );
