@@ -50,7 +50,10 @@ export default function RecipeItem({ recipe }) {
             className={classes.button}
             size="small"
             onClick={() => {
-              history.push("/detailspage");
+              history.push({
+                pathname: "/detailspage",
+                state: recipe,
+              });
             }}
           >
             Zur Anleitung

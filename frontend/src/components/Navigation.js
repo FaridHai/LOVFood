@@ -65,4 +65,5 @@ export default function Navigation({ searchedClicked }) {
 const Wrapper = styled.nav`
   display: grid;
   justify-content: center;
+  padding: 10px;
 `;
