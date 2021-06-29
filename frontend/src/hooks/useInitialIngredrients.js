@@ -4,9 +4,9 @@ import axios from "axios";
 export default function useInitialIngredients() {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [ingredientsList, setIngredientsList] = useState([
-    "Wasser",
-    "Salz",
-    "Pfeffer",
+    {id:"1418", name:"Wasser"},
+    {id:"1046", name:"Salz"},
+    {id:"874", name:"Pfeffer"}
   ]);
 
   function getRecipesByIngredients(ingredientsList) {

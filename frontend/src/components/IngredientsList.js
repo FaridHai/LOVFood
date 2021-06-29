@@ -9,7 +9,7 @@ export default function IngredientsList({
     <Wrapper>
       {ingredientsList.map((ingredient) => (
         <IngredientItem
-          key={ingredient}
+          key={ingredient.id}
           ingredient={ingredient}
           ingredientsList={ingredientsList}
           setIngredientsList={setIngredientsList}
