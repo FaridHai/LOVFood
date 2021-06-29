@@ -24,15 +24,20 @@ export default function AddIngredients({
 
   const handleInputChange = (event, value) => {
     if (value !== null) {
-      setIngredient(value);
       setDescription(value);
+    }
+  };
+  const handleOnChange = (event, value) => {
+    if (value !== null) {
+      setIngredient(value);
+      setDescription(value.name);
     }
   };
 
   return (
     <Wrapper onSubmit={handleAddClick}>
       <Autocomplete
-        onChange={(event, value) => handleInputChange(event, value)}
+        onChange={(event, value) => handleOnChange(event, value)}
         onInputChange={(event, value) => handleInputChange(event, value)}
         id="Ingredient"
         color={"white"}

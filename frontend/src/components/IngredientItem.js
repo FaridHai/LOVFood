@@ -17,7 +17,6 @@ export default function IngredientItem({
       },
     },
   }));
-
   const classes = useStyles();
 
   const handleDelete = (event) => {
@@ -25,7 +24,7 @@ export default function IngredientItem({
 
     setIngredientsList(
       ingredientsList.filter((ing) => {
-        return ing !== ingredient;
+        return ing.name !== ingredient.name;
       })
     );
   };
@@ -34,7 +33,7 @@ export default function IngredientItem({
     <Wrapper className={classes.root}>
       <Chip
         style={{ backgroundColor: "#008080", color: "white" }}
-        label={ingredient}
+        label={ingredient.name}
         onDelete={handleDelete}
       />
     </Wrapper>
