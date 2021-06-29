@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 export default function Search({
   ingredientsList,
   setSearchClicked,
-  enteredIngrredients,
+  getRecipesByIngredients,
 }) {
   const history = useHistory();
   return (
@@ -15,7 +15,7 @@ export default function Search({
         variant="contained"
         onClick={() => {
           setSearchClicked(true);
-          enteredIngrredients(ingredientsList);
+          getRecipesByIngredients(ingredientsList);
           history.push("/filteredSearch");
         }}
         disabled={ingredientsList.length < 4}

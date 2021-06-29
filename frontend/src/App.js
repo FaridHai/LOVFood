@@ -16,7 +16,7 @@ export default function App() {
   const {
     ingredientsList,
     setIngredientsList,
-    enteredIngredients,
+    getRecipesByIngredients,
     filteredRecipes,
   } = useInitialIngredients();
   const [searchClicked, setSearchClicked] = useState();
@@ -31,7 +31,7 @@ export default function App() {
             ingredientsList={ingredientsList}
             setIngredientsList={setIngredientsList}
             setSearchClicked={setSearchClicked}
-            enteredIngredients={enteredIngredients}
+            getRecipesByIngredients={getRecipesByIngredients}
           />
         </Route>
         <Route path={"/recipes"} exact>

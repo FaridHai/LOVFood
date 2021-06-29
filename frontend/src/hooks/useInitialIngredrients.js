@@ -9,7 +9,7 @@ export default function useInitialIngredients() {
     "Pfeffer",
   ]);
 
-  function enteredIngredients(ingredientsList) {
+  function getRecipesByIngredients(ingredientsList) {
     axios
       .post("api/ingredients", ingredientsList)
       .then((response) => response.data)
@@ -20,7 +20,7 @@ export default function useInitialIngredients() {
   return {
     ingredientsList,
     setIngredientsList,
-    enteredIngredients,
+    getRecipesByIngredients,
     filteredRecipes,
   };
 }
