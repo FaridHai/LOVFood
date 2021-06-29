@@ -12,5 +12,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "ingredients")
 public class Ingredient {
     @Id
+    private String id;
     private String name;
 }

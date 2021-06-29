@@ -15,10 +15,10 @@ import java.util.List;
 @Document(collection = "recipes")
 public class Recipe {
         @Id
+        private String id;
         private String title;
         private String instruction;
-        @DBRef
-        private List<Ingredient> ingredients;
+        private List<RecipeIngredient> ingredients;
         private int duration;
         private int level;
         private int portion;

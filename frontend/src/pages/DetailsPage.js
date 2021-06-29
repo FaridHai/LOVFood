@@ -1,34 +1,4 @@
-import { useHistory, useLocation } from "react-router-dom";
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import styled from "styled-components/macro";
-
-const useStyles = makeStyles({
-  root: {
-    width: "100%",
-    backgroundColor: "#008080",
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    color: "white",
-  },
-  text: {
-    marginBottom: 12,
-    color: "white",
-  },
-  button: {
-    color: "white",
-  },
-});
+import Main from "../components/Main";
 
 export default function DetailsPage() {
   const location = useLocation();
@@ -39,7 +9,7 @@ export default function DetailsPage() {
     <Wrapper>
       <Card className={classes.root}>
         <CardContent>
-          <Titel>Titel:</Titel>
+          <Title>Titel:</Title>
           <Typography
             className={classes.title}
             color="textSecondary"
@@ -47,19 +17,17 @@ export default function DetailsPage() {
           >
             {location.state.title}
           </Typography>
-          <Titel>Zutaten:</Titel>
+          <Title>Zutaten:</Title>
           <Typography
             className={classes.title}
             color="textSecondary"
             gutterBottom
           >
             {location.state.ingredients
-              .map(function (ingredient) {
-                return ingredient["name"];
-              })
+              .map(ingredient => ingredient["name"])
               .join(", ")}
           </Typography>
-          <Titel>Anleitung:</Titel>
+          <Title>Anleitung:</Title>
           <Typography
             className={classes.text}
             color="textSecondary"
@@ -67,7 +35,7 @@ export default function DetailsPage() {
           >
             {location.state.instruction}
           </Typography>
-          <Titel>Dauer:</Titel>
+          <Title>Dauer:</Title>
           <Typography
             className={classes.text}
             color="textSecondary"
@@ -75,7 +43,7 @@ export default function DetailsPage() {
           >
             {location.state.duration}
           </Typography>
-          <Titel>Schwierigkeit:</Titel>
+          <Title>Schwierigkeit:</Title>
           <Typography
             className={classes.text}
             color="textSecondary"
@@ -83,7 +51,7 @@ export default function DetailsPage() {
           >
             {location.state.level}
           </Typography>
-          <Titel>Portion:</Titel>
+          <Title>Portion:</Title>
           <Typography
             className={classes.text}
             color="textSecondary"
@@ -116,7 +84,7 @@ const Wrapper = styled.section`
   width: 94%;
 `;
 
-const Titel = styled.h4`
+const Title = styled.h4`
   display: flex;
   margin-top: 20px;
   height: 10%;
