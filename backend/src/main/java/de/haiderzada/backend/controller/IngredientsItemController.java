@@ -2,7 +2,6 @@ package de.haiderzada.backend.controller;
 
 import de.haiderzada.backend.model.Ingredient;
 import de.haiderzada.backend.model.Recipe;
-import de.haiderzada.backend.model.RecipeIngredient;
 import de.haiderzada.backend.service.RecipesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
