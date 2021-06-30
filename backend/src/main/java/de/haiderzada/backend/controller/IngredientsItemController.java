@@ -30,15 +30,6 @@ public class IngredientsItemController {
         return service.listIngredients();
     }
 
-    @GetMapping({"{name}"})
-    public Ingredient findById(@PathVariable String name) {
-        Optional<Ingredient> response = service.findByName(name);
-        if (response.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ingredient with name " + name + " not found");
-        }
-        return response.get();
-    }
-
     @PostMapping
     public List<Recipe> enteredIngredient(@RequestBody List<Ingredient> ingredientsList){
         List<Recipe> recipeList = recipesService.filteredRecipes(ingredientsList);
