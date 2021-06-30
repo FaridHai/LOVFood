@@ -45,7 +45,7 @@ export default function AddIngredients({
         style={{ width: "100%" }}
         options={ingredients}
         getOptionLabel={(ingredient) => ingredient.name}
-        renderInput={(params) => <TextField {...params} label="Zutate:" />}
+        renderInput={(params) => <TextField {...params} label="Zutaten:" />}
       />
       <button disabled={!ingredient}>Hinzufügen</button>
     </Wrapper>
