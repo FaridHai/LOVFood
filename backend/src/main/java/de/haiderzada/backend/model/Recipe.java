@@ -19,6 +19,7 @@ public class Recipe {
         private String instruction;
         private List<RecipeIngredient> ingredients;
         private int duration;
+        private String thumbnail;
         private int level;
         private int portion;
 }

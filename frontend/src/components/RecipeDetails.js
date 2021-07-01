@@ -13,11 +13,6 @@ const useStyles = makeStyles({
         width: "100%",
         backgroundColor: "#008080",
     },
-    bullet: {
-        display: "inline-block",
-        margin: "0 2px",
-        transform: "scale(0.8)",
-    },
     title: {
         color: "white",
     },

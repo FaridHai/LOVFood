@@ -21,8 +21,4 @@ public class IngredientsService {
     public List<Ingredient> listIngredients() {
         return ingredientsRepository.findAll();
     }
-
-    public Optional<Ingredient> findByName(String name) {
-        return ingredientsRepository.findById(name);
-    }
 }
