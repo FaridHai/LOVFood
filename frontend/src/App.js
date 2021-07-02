@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import { useState } from "react";
 import useRecipes from "./hooks/useRecipes";
 import DetailsPage from "./pages/DetailsPage";
+import styled from "styled-components/macro";
 
 export default function App() {
   const { recipes, recipesList, setRecipesList } = useRecipes();
@@ -22,6 +23,7 @@ export default function App() {
   const [searchClicked, setSearchClicked] = useState();
   return (
     <Router>
+      <Wrapper>
       <Header />
       <Navigation searchedClicked={searchClicked} />
       <Switch>
@@ -52,6 +54,12 @@ export default function App() {
           <DetailsPage />
         </Route>
       </Switch>
+      </Wrapper>
     </Router>
   );
 }
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height:100%
+`;

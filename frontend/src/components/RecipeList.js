@@ -17,7 +17,5 @@ export default function RecipeList({ recipes, filteredRecipes }) {
 
 const Wrapper = styled.section`
   display: flex;
-  justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
 `;
