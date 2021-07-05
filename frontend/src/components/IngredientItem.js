@@ -1,4 +1,3 @@
-import styled from "styled-components/macro";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
 
@@ -11,6 +10,7 @@ export default function IngredientItem({
     root: {
       display: "flex",
       justifyContent: "center",
+      margin: 5,
       flexWrap: "wrap",
       "& > *": {
         margin: theme.spacing(0.5),
@@ -30,17 +30,10 @@ export default function IngredientItem({
   };
 
   return (
-    <Wrapper className={classes.root}>
-      <Chip
+      <Chip className={classes.root}
         style={{ backgroundColor: "#008080", color: "white" }}
         label={ingredient.name}
         onDelete={handleDelete}
       />
-    </Wrapper>
   );
 }
-const Wrapper = styled.section`
-  padding: 5px;
-  width: 150px;
-  height: 25px;
-`;

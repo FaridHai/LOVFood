@@ -9,14 +9,20 @@ import FastfoodIcon from "@material-ui/icons/Fastfood";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
+  '@global': {
+    '.Mui-selected': {
+      color: "white",
+    },
+  },
   root: {
     width: "auto",
     backgroundColor: "#008080",
     borderRadius: "12px",
   },
-  navi: {
+  selected: {
     color: "white",
   },
+
 });
 
 export default function Navigation({ searchedClicked }) {
@@ -34,7 +40,7 @@ export default function Navigation({ searchedClicked }) {
         className={classes.root}
       >
         <BottomNavigationAction
-          className={classes.navi}
+          className={classes.selected}
           component={Link}
           to="/"
           label="Startseite"
@@ -42,7 +48,7 @@ export default function Navigation({ searchedClicked }) {
           icon={<HomeIcon style={{ color: "white" }} />}
         />
         <BottomNavigationAction
-          className={classes.navi}
+          className={classes.selected}
           component={Link}
           to="/recipes"
           label="Rezepte"
@@ -50,7 +56,7 @@ export default function Navigation({ searchedClicked }) {
         />
         {searchedClicked && (
           <BottomNavigationAction
-            className={classes.navi}
+            className={classes.selected}
             component={Link}
             to="/filteredSearch"
             label="Suchergebnis"
@@ -67,3 +73,4 @@ const Wrapper = styled.nav`
   justify-content: center;
   padding: 10px;
 `;
+

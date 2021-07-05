@@ -11,6 +11,7 @@ export default function Header() {
 
 const Wrapper = styled.header`
   text-align: center;
+  padding-top: 24px;
   img {
     height: 150px;
     width: 150px;

@@ -5,24 +5,26 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components/macro";
 import {useHistory} from "react-router-dom";
+import {CardActionArea} from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
-        width: "100%",
+        width: "45%",
         backgroundColor: "#008080",
         padding: "10px",
         display: "flex",
         borderRadius: "12px",
     },
     title: {
-        fontSize: 14,
+        fontSize: 18,
         color: "white",
         margin: "auto",
         padding: "10px",
+        textAlign: "center",
     },
     card: {
         display: "flex",
-        padding:  "10px",
+        padding: "10px",
     },
 });
 
@@ -35,29 +37,31 @@ export default function RecipeItem({recipe}) {
             <Card
                 className={classes.root}
                 onClick={() => {
-                history.push({
-                    pathname: "/detailspage",
-                    state: recipe,
-                });
-            }}>
-                <CardContent className={classes.card}>
-                    <Typography
-                        className={classes.title}
-                        color="textSecondary"
-                        gutterBottom
-                    >
-                    {recipe.thumbnail && <img src={recipe.thumbnail} alt="no preview"/>}
-                    </Typography>
-                </CardContent>
-                <CardContent className={classes.card}>
-                    <Typography
-                        className={classes.title}
-                        color="textSecondary"
-                        gutterBottom
-                    >
-                        {recipe.title}
-                    </Typography>
-                </CardContent>
+                    history.push({
+                        pathname: "/detailspage",
+                        state: recipe,
+                    });
+                }}>
+                <CardActionArea>
+                    <CardContent className={classes.card}>
+                        <Typography
+                            className={classes.title}
+                            color="textSecondary"
+                            gutterBottom
+                        >
+                            {recipe.thumbnail && <img src={recipe.thumbnail} alt="no preview"/>}
+                        </Typography>
+                    </CardContent>
+                    <CardContent className={classes.card}>
+                        <Typography
+                            className={classes.title}
+                            color="textSecondary"
+                            gutterBottom
+                        >
+                            {recipe.title}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
             </Card>
         </Wrapper>
     );
