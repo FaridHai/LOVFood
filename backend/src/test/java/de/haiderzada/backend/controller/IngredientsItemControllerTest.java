@@ -80,9 +80,8 @@ public class IngredientsItemControllerTest {
         ResponseEntity<Recipe[]> response = restTemplate.postForEntity("http://localhost:" + port + "/api/ingredients", ingredientsList, Recipe[].class);
 
         //THEN
-        List<Recipe> recipeList = recipesRepository.findAll();
         assertThat(response.getStatusCode(), is(HttpStatus.OK));
-//        assertThat(recipeList, contains(ingredientsList));
+        assertThat(response.getBody(), arrayContainingInAnyOrder(recipe));
 
     }
 }
