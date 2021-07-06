@@ -52,6 +52,7 @@ export default function AddIngredients({
       <BottomNavigationAction
           className="addbutton"
           color={"white"}
+          disabled={!description}
           onClick={handleAddClick}
           icon={<AddIcon style={{ color: "white" }} />}
       />
@@ -78,6 +79,6 @@ const Wrapper = styled.form`
    margin-top: 24px;
    border-radius: 12px;
    min-width: 8px;
-   padding-top: 8px;
+   padding: 8px !important;
   }
 `;
