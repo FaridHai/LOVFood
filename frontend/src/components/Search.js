@@ -33,5 +33,6 @@ const Wrapper = styled.div`
   grid-template-rows: min-content min-content min-content min-content 1fr;
   Button {
     background-color: #008080;
+    border-radius: 0px;
   }
 `;
