@@ -5,15 +5,15 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components/macro";
 import {useHistory} from "react-router-dom";
-import {CardActionArea} from "@material-ui/core";
+import {CardActionArea, CardMedia} from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
-        width: "45%",
+        width: "175px",
         backgroundColor: "#008080",
-        padding: "10px",
-        display: "flex",
         borderRadius: "12px",
+        webkitBoxShadow: "5px 5px 12px -7px #000000",
+        boxShadow: "5px 5px 12px -7px #000000",
     },
     title: {
         fontSize: 18,
@@ -25,6 +25,9 @@ const useStyles = makeStyles({
     card: {
         display: "flex",
         padding: "10px",
+    },
+    media: {
+        height: "150px",
     },
 });
 
@@ -43,15 +46,10 @@ export default function RecipeItem({recipe}) {
                     });
                 }}>
                 <CardActionArea>
-                    <CardContent className={classes.card}>
-                        <Typography
-                            className={classes.title}
-                            color="textSecondary"
-                            gutterBottom
-                        >
-                            {recipe.thumbnail && <img src={recipe.thumbnail} alt="no preview"/>}
-                        </Typography>
-                    </CardContent>
+                    <CardMedia
+                        className={classes.media}
+                        image={recipe.thumbnail}>
+                    </CardMedia>
                     <CardContent className={classes.card}>
                         <Typography
                             className={classes.title}
@@ -69,5 +67,5 @@ export default function RecipeItem({recipe}) {
 const Wrapper = styled.section`
   display: flex;  
   padding: 6px;
-  width: 100%;
 `;
+
