@@ -17,8 +17,7 @@ export default function RecipeList({ recipes, filteredRecipes, loading, filtered
   const classes = useStyles();
   return (
     <Wrapper classname={classes.root}>
-      {loading && <CircularProgress />}
-      {filteredLoading && <CircularProgress />}
+      {(loading || filteredLoading )&& <CircularProgress />}
       {filteredRecipes
         ? filteredRecipes.map((recipe, index) => (
             <RecipeItem key={index} recipe={recipe} />
