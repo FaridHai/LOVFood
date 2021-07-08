@@ -11,6 +11,8 @@ export default function IngredientItem({
       display: "flex",
       justifyContent: "center",
       margin: 5,
+      webkitBoxShadow: "5px 5px 12px -7px #000000",
+      boxShadow: "5px 5px 12px -7px #000000",
       flexWrap: "wrap",
       "& > *": {
         margin: theme.spacing(0.5),
@@ -37,3 +39,4 @@ export default function IngredientItem({
       />
   );
 }
+
