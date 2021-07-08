@@ -18,7 +18,8 @@ export default function RecipeList({ recipes, filteredRecipes, loading, filtered
   return (
     <Wrapper classname={classes.root}>
       {(loading || filteredLoading )&& <CircularProgress />}
-      {(filteredRecipes?.length < 1 && !filteredLoading) && <Title>Keine passenden Rezepte gefunden!</Title>}
+      {(filteredRecipes
+          ?.length < 1 && !filteredLoading) && <Title>Keine passenden Rezepte gefunden!</Title>}
       {filteredRecipes
         ? filteredRecipes.map((recipe, index) => (
             <RecipeItem key={index} recipe={recipe} />
