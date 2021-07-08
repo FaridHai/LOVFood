@@ -21,10 +21,10 @@ export default function useInitialIngredients() {
     }
 
     return {
+        filteredLoading,
         ingredientsList,
         setIngredientsList,
         getRecipesByIngredients,
-        filteredRecipes,
-        filteredLoading
+        filteredRecipes
     };
 }

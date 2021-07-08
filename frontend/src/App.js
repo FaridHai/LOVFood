@@ -39,7 +39,6 @@ export default function App() {
         </Route>
         <Route path={"/recipes"} exact>
           <Recipes
-            filteredLoading={filteredLoading}
             loading={loading}
             recipes={recipes}
             recipesList={recipesList}
@@ -48,6 +47,7 @@ export default function App() {
         </Route>
         <Route path={"/filteredSearch"} exact>
           <FilteredRecipes
+              filteredLoading={filteredLoading}
             ingredientsList={ingredientsList}
             recipes={recipes}
             filteredRecipes={filteredRecipes}

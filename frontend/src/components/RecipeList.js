@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeList({ recipes, filteredRecipes, loading, filteredLoading }) {
   const classes = useStyles();
-
   return (
     <Wrapper classname={classes.root}>
       {loading && <CircularProgress />}
