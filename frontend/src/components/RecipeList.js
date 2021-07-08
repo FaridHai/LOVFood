@@ -1,9 +1,23 @@
 import styled from "styled-components/macro";
 import RecipeItem from "./RecipeItem";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-export default function RecipeList({ recipes, filteredRecipes }) {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      marginLeft: theme.spacing(2),
+    },
+  },
+}));
+
+export default function RecipeList({ recipes, filteredRecipes, loading, filteredLoading }) {
+  const classes = useStyles();
   return (
-    <Wrapper>
+    <Wrapper classname={classes.root}>
+      {(loading || filteredLoading )&& <CircularProgress />}
       {filteredRecipes
         ? filteredRecipes.map((recipe, index) => (
             <RecipeItem key={index} recipe={recipe} />

@@ -12,9 +12,10 @@ import DetailsPage from "./pages/DetailsPage";
 import styled from "styled-components/macro";
 
 export default function App() {
-  const { recipes, recipesList, setRecipesList } = useRecipes();
+  const { loading, recipes, recipesList, setRecipesList } = useRecipes();
   const { ingredients } = useIngredients();
   const {
+    filteredLoading,
     ingredientsList,
     setIngredientsList,
     getRecipesByIngredients,
@@ -38,6 +39,7 @@ export default function App() {
         </Route>
         <Route path={"/recipes"} exact>
           <Recipes
+            loading={loading}
             recipes={recipes}
             recipesList={recipesList}
             setRecipesList={setRecipesList}
@@ -45,6 +47,7 @@ export default function App() {
         </Route>
         <Route path={"/filteredSearch"} exact>
           <FilteredRecipes
+              filteredLoading={filteredLoading}
             ingredientsList={ingredientsList}
             recipes={recipes}
             filteredRecipes={filteredRecipes}
