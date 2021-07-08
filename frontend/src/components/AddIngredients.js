@@ -3,7 +3,6 @@ import { TextField } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import { useState } from "react";
 import AddIcon from '@material-ui/icons/Add';
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 
 export default function AddIngredients({
   ingredients,
@@ -49,13 +48,14 @@ export default function AddIngredients({
         getOptionLabel={(ingredient) => ingredient.name}
         renderInput={(params) => <TextField {...params} label="Zutaten:" />}
       />
-      <BottomNavigationAction
+      <button
           className="addbutton"
           color={"white"}
           disabled={!description}
           onClick={handleAddClick}
-          icon={<AddIcon style={{ color: "white" }} />}
-      />
+          >
+        <AddIcon style={{ color: "white" }}/>
+      </button>
     </Wrapper>
   );
 }
@@ -79,6 +79,9 @@ const Wrapper = styled.form`
    margin-top: 24px;
    border-radius: 12px;
    min-width: 8px;
-   padding: 8px !important;
+   padding: 6px;
+   -webkit-box-shadow: 5px 5px 12px -7px #000000,
+   box-shadow: 5px 5px 12px -7px #000000,
+   
   }
 `;

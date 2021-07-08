@@ -33,4 +33,6 @@ export default function RecipeList({ recipes, filteredRecipes, loading, filtered
 const Wrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  flex: 0 0 calc(16.66% - 20px);
 `;

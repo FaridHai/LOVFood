@@ -18,6 +18,8 @@ const useStyles = makeStyles({
     width: "auto",
     backgroundColor: "#008080",
     borderRadius: "12px",
+    webkitBoxShadow: "5px 5px 12px -7px #000000",
+    boxShadow: "5px 5px 12px -7px #000000",
   },
   selected: {
     color: "white",
@@ -72,5 +74,6 @@ const Wrapper = styled.nav`
   display: grid;
   justify-content: center;
   padding: 10px;
+
 `;
 

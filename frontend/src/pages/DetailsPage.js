@@ -13,6 +13,8 @@ const useStyles = makeStyles({
     root: {
         width: "100%",
         backgroundColor: "#008080",
+        borderRadius: "12px",
+        boxShadow: "5px 5px 12px -7px #000000",
     },
     title: {
         color: "white",
