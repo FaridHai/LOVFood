@@ -2,11 +2,11 @@ import Main from "../components/Main";
 import RecipeList from "../components/RecipeList";
 import styled from "styled-components/macro";
 
-export default function Recipes({ recipes }) {
+export default function Recipes({ recipes, loading, filteredLoading }) {
   return (
     <Main>
       <Titel>Alle Rezepte:</Titel>
-      <RecipeList recipes={recipes} />
+      <RecipeList loading={loading} filteredLoading={filteredLoading} recipes={recipes} />
     </Main>
   );
 }
