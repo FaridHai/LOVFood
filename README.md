@@ -12,7 +12,7 @@ Mit dieser innovativen App kannst du mit den übrig gebliebenen Zutaten nach tol
 
 ### `Demo`
 
-<img src="frontend/src/images/demo.gif" height="600">
+<img src="frontend/src/images/lovfood.gif" height="600">
 
 ### `Browserversion`
 [Zur Webseite](https://lovfood.herokuapp.com/)
